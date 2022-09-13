@@ -1,0 +1,2169 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid black; */
+}
+
+/*#region -------------------------------Pregnancy_Introduction_page---------------------------------*/
+
+/*#region----General Styles-----*/
+html {
+  scroll-behavior: smooth;
+}
+window {
+  overflow: scroll;
+}
+:root {
+  /* colors */
+  --main-color: #d5bb95;
+  --main-dark-color: #b89b83;
+  --background-color: #ebedf0;
+  --backgorund-secondary-color: #a67a5b;
+  --background-tertiary-color: #cab9a8;
+
+  /* font-colors */
+  --fc-light-one: #ebeff5;
+  --fc-dark-one: #201e1e;
+
+  /* fonts */
+  --ff-primary: "Roboto", Sans-serif;
+  --ff-secondary: "Source Code Pro", monospace;
+
+  /* font weights */
+  --fw-small: 300;
+  --fw-normal: 500;
+  --fw-large: 700;
+  --fw-xlarge: 900;
+
+  /* font sizes */
+  --fs-normal: 1.2rem;
+  --fs-large: 1.8rem;
+}
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: var(--ff-primary);
+  background-color: var(--main-color);
+}
+img {
+  width: 100%;
+}
+.title::after {
+  content: "";
+  position: relative;
+  display: block;
+  border-radius: 3px;
+  width: 210px;
+  height: 5px;
+  background-color: var(--backgorund-secondary-color);
+  margin-top: 2.6rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  background-color: var(--backgorund-secondary-color);
+  color: var(--fc-dark-one);
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-normal);
+  text-decoration: none;
+  border: 0;
+  border-radius: 15px;
+  padding: 1px 15px;
+  border-radius: 50px;
+  transition: 0.3s;
+  margin: 6px;
+  text-align: center;
+}
+.button:hover {
+  color: white;
+  background-color: var(--background-tertiaryary-color);
+  transform: scale(1.2);
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.paragraph {
+  color: var(--fc-dark-one);
+  font-weight: var(--fw-normal);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-normal);
+}
+/*#endregion----General Styles-----*/
+
+/*#region header_section*/
+.header-container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+.video-container {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay-intro {
+  width: 100%;
+  height: 100vh;
+  top: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  background: rgba(30, 30, 30, 0.3);
+}
+
+.introtitle {
+  position: absolute;
+  text-align: center;
+  font-size: 3rem;
+  font-family: var(--ff-secondary);
+  padding: 10px;
+  z-index: 4;
+  background-color: rgba(184, 155, 131, 0.5);
+}
+
+.box {
+  width: 100px;
+  height: 900px;
+  background-color: black;
+}
+
+.navbar {
+  z-index: 3;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  margin-top: 15px;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.logo {
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mainMenu {
+  position: relative;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  position: relative;
+  padding: 3px 15px;
+  display: inline-block;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fc-dark-one);
+  transition: 0.3s;
+  margin: 6px;
+}
+
+.nav-link:hover {
+  color: var(--fc-light-one);
+  background: var(--main-dark-color);
+  transform: scale(1.1);
+}
+
+.active-nl {
+  position: relative;
+  background: var(--main-color);
+  border-radius: 50px;
+  transition: 0.3s;
+  color: var(--fc-light-one);
+}
+
+.active-nl:hover {
+  background: var(--backgorund-secondary-color);
+  color: var(--fc-dark-one);
+}
+
+nav .openMenu,
+.closeMenu {
+  font-size: 1.5rem;
+  display: none;
+  color: var(--main-color);
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  nav .mainMenu {
+    position: absolute;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    display: none;
+    background: var(--backgorund-secondary-color);
+    opacity: 0.9;
+    transition: 1.5s ease top;
+  }
+
+  nav .openMenu {
+    display: block;
+  }
+
+  nav .closeMenu {
+    display: block;
+    position: absolute;
+    color: black;
+    top: 10px;
+    right: 10px;
+  }
+
+  nav .nav-link {
+    color: var(--fc-light-one);
+    font-weight: var(--fw-large);
+    padding: 7px 30px;
+  }
+
+  nav .active-nl {
+    padding: 7px 70px;
+  }
+}
+
+/*#endregion header_section */
+
+/*#region Development_section */
+
+.Development_section {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 70vh;
+  padding: 40px;
+  background-color: var(--main-color);
+  overflow: hidden;
+}
+.slider_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: 10px;
+}
+.DV_title {
+  color: var(--fc-dark-one);
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.9rem;
+  line-height: 3.3rem;
+  font-weight: var(--fw-large);
+  font-size: 3rem;
+}
+.DV_title::after {
+  width: 50%;
+  line-height: 1rem;
+}
+.slide_box {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.slide_box .image_btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+}
+.image_btn {
+  display: inline-block;
+  background: url(./assets/DV_img_background1.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 60px;
+  width: 60px;
+  margin: 0 auto;
+  outline: 0;
+  position: relative;
+  margin-bottom: 10px;
+}
+.slide_box:hover .image_btn {
+  background: url(./assets/DV_img_background2.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.wkNumber_dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-top: 2px solid var(--backgorund-secondary-color);
+}
+.dot_con {
+  position: absolute;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -50%);
+  background-color: #cab9a8;
+  border: 2px solid;
+}
+.wkNumber_btn {
+  position: relative;
+  text-decoration: none;
+  color: var(--fc-dark-one);
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  font-size: var(--fs-large);
+  font-weight: var(--fw-normal);
+  background-color: var(--main-color);
+  margin-top: 12%;
+}
+#slide_box:hover .wkNumber_btn {
+  color: white;
+  background-color: var(--none);
+  transform: scale(1.5);
+}
+#slide_box:hover .dot_con {
+  background-color: var(--backgorund-secondary-color);
+}
+
+/*#endregion Development_section*/
+
+/*#region Pregnancy_section*/
+
+.Pregnancy_section {
+  display: grid;
+  grid-template: "column1 column2";
+  grid-template-columns: 3.5fr 2.3fr;
+  width: 100%;
+  height: 100vh;
+}
+
+@media (max-width: 720px) {
+  .Pregnancy_section {
+    height: 50vh;
+    width: 70%;
+  }
+}
+
+.column1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  padding: 20px;
+}
+
+.Pregnancy_inner_column1 {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.Pregnancy_title {
+  color: var(--fc-dark-one);
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-bottom: 0.9rem;
+  line-height: 1rem;
+  font-weight: var(--fw-large);
+  font-size: 4rem;
+}
+
+.title::before {
+  content: attr(data-title);
+  position: relative;
+  display: block;
+  font-size: 1.05rem;
+  font-weight: var(--fw-large);
+  color: var(--backgorund-secondary-color);
+  letter-spacing: 3px;
+  margin-bottom: 1.3rem;
+  text-transform: uppercase;
+}
+
+.Pregnancy_title::before {
+  margin-bottom: 0.9rem;
+}
+
+.Pregnancy_paragraph {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: var(--fc-dark-one);
+  font-weight: var(--fw-normal);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-normal);
+  text-align: center;
+}
+
+.column2 {
+  position: relative;
+  background-color: var(--main-color);
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.Pregnancy_image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-bottom-left-radius: 20%;
+  transition: 0.6s;
+}
+
+.Pregnancy_image:hover {
+  transform: scaleX(1.05);
+}
+
+.Pregnancy_button_container {
+  display: grid;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.Pregnancy_btn,
+.Parenting_btn {
+  background-color: var(--backgorund-secondary-color);
+  color: var(--fc-dark-one);
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-normal);
+  text-decoration: none;
+  border: 0;
+  border-radius: 15px;
+  padding: 1px 15px;
+  border-radius: 50px;
+  transition: 0.3s;
+  margin: 6px;
+  text-align: center;
+}
+
+.Pregnancy_btn:hover,
+.Parenting_btn:hover {
+  color: white;
+  background-color: var(--background-tertiaryary-color);
+  transform: scale(1.2);
+  text-decoration: none;
+}
+/* #endregion Pregnancy_section */
+
+/*#region Parenting_section */
+
+.Parenting_section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1.7fr;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-color);
+}
+
+.Parenting_left_container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.Parenting_pic_circle {
+  position: absolute;
+  border-radius: 50%;
+  width: 260px;
+  height: 260px;
+  background-color: var(--main-color);
+  padding: 8px;
+  transition: 2s;
+  right: -190px;
+  top: -125px;
+}
+.overlay_container_Parenting {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.quote_container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: var(--backgorund-secondary-color);
+  padding: 13px;
+  bottom: -18%;
+  border: 9px solid var(--main-color);
+  z-index: 2;
+  border-radius: 13px;
+  z-index: 5;
+}
+.open_quotation_symbols {
+  width: 60px;
+  height: auto;
+}
+.close_quotation_symbols {
+  width: 60px;
+  height: auto;
+}
+.Parenting_quote_paragraph {
+  text-align: justify;
+}
+.Parenting_pic {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  transition: 0.6s;
+  border-bottom-right-radius: 55px;
+}
+
+.Parenting_right_container {
+  position: relative;
+  display: grid;
+  grid-template-rows: "Parenting_title Parenting_paragraph button_container";
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+}
+.Parenting_title {
+  color: var(--fc-dark-one);
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.9rem;
+  line-height: 1rem;
+  font-weight: var(--fw-large);
+  font-size: 4rem;
+}
+.Parenting_paragraph {
+  display: block;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+
+  color: var(--fc-dark-one);
+  font-weight: var(--fw-normal);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-normal);
+  text-align: center;
+  transform: translate(-50% -50%);
+}
+.buttons_con {
+  position: relative;
+  display: grid;
+  grid-gap: 15px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.bcons {
+  display: flex;
+  justify-content: space-around;
+}
+.bcon1, .bcon2 {
+  display: grid;
+
+}
+.Parenting_bottom_paragraph,
+.Parenting_bottomest_paragraph {
+  text-align: center;
+  padding: auto;
+  position: relative;
+}
+/* #endregion Parenting_section */
+
+/*#region Health_and_Fitness_section  */
+.Health_and_Fitness_section {
+  position: relative;
+  display: grid;
+  grid-template: "Health_container Fitness_container";
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--main-color);
+  width: 100%;
+  height: 100vh;
+}
+
+/*#region common_designs_HF*/
+.Health_container,
+.Fitness_container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+}
+.Health_card_container,
+.Fitness_card_container {
+  position: absolute;
+  display: grid;
+  grid-gap: 10px;
+  padding: 9px;
+  width: 300px;
+  height: auto;
+  background-color: var(--backgorund-secondary-color);
+  border: 6px solid var(--main-color);
+  text-align: center;
+  top: 30%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.Health_card_pic,
+.Fitness_card_pic {
+  border-radius: 9px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.Fitness_card_btn_pic,
+.Health_card_btn_pic {
+  width: 60px;
+  height: auto;
+  animation: pulsing_button 2s linear infinite;
+}
+@keyframes pulsing_button {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.Fitness_card_btn_pic:hover,
+.Health_card_btn_pic:hover {
+  animation-play-state: paused;
+  transform: scale(1.1);
+}
+/*#endregion common_designs_HF*/
+
+/*#region Health_container*/
+.Health_side_pic {
+  position: absolute;
+  width: 85%;
+  height: 100vh;
+  border-radius: 50%;
+  left: -259px;
+  transition: 1.5s;
+}
+.Health_card_container {
+  right: 36%;
+}
+.Health_side_pic:hover,
+.Health_card_pic:hover {
+  transform: scale(1.15);
+}
+.Health_card_btn_pic:hover {
+  animation-play-state: paused;
+  transform: scale(1.1);
+}
+/*#endregion Health_container */
+
+/*#region Fitness_container*/
+.Fitness_side_pic {
+  position: absolute;
+  width: 85%;
+  height: 100vh;
+  border-radius: 50%;
+  right: -259px;
+  overflow: hidden;
+  transition: 1.5s;
+}
+.Fitness_card_container {
+  left: 36%;
+}
+.Fitness_side_pic:hover,
+.Fitness_card_pic:hover {
+  transform: scale(1.15);
+}
+.Fitness_card_btn_pic {
+  width: 70px;
+}
+
+/*#endregion Fitness_container */
+
+/*#region Health_and_Fitness_container*/
+.overlay_container_HF {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Health_and_Fitness_container {
+  position: relative;
+  width: 350px;
+  height: 100%;
+  text-align: center;
+}
+.H_n_F_title {
+  color: var(--fc-dark-one);
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.9rem;
+  font-weight: var(--fw-large);
+  font-size: 2.5rem;
+}
+.H_n_F_title::after {
+  margin-top: 20px;
+}
+.H_n_F_title::before {
+  margin-bottom: 2px;
+}
+.HF_btn_container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.H_n_F_btn {
+  position: relative;
+  z-index: 6;
+}
+.button:hover {
+  color: white;
+  background-color: var(--background-tertiaryary-color);
+  transform: scale(1.2);
+  text-decoration: none;
+}
+/*#endregion Health_and_Fitness_container*/
+
+/*#endregion Health_and_Fitness_section */
+
+/*#region Family_Planning_section  */
+.Family_planning_section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+
+}
+.FP_container1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.Family_planning_cover_pic {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  top: 0;
+  bottom: 0;
+}
+.overlay_container_FP {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.4;
+  z-index: 2;
+}
+.Family_planning_pic {
+  width: 75%;
+  height: 70%;
+  position: relative;
+  border: 20px solid rgba(255, 255, 255, 0.8);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.FP_container2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-gap: 15px;
+  padding: 1rem;
+}
+.Family_planning_title {
+  color: var(--fc-dark-one);
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.9rem;
+  line-height: 1rem;
+  font-weight: var(--fw-large);
+  font-size: 4rem;
+}
+.btn_container {
+  display: grid;
+  grid-template: "btn_con1 btn_con2";
+  grid-column-gap: 15px;
+}
+.btn_con1,
+.btn_con2 {
+  display: grid;
+  grid-gap: 50px;
+}
+/*#endregion Family_Planning_section  */
+
+/*#region Aftercare_section */
+
+.Aftercare_section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: var(--main-color);
+  display: grid;
+  grid-template: "AF_con1 AF_con2";
+  grid-template-columns: 1fr 1fr;
+  margin: 2px solid yellow;
+}
+.AF_con1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-gap: 15px;
+  padding: 30px;
+  text-align: center;
+}
+.Aftercare_title {
+  color: var(--fc-dark-one);
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.9rem;
+  line-height: 2.8rem;
+  font-weight: var(--fw-large);
+  font-size: 3rem;
+}
+.Aftercare_title::after {
+  margin-top: 33px;
+}
+.Aftercare_title::before {
+  margin-bottom: 15px;
+}
+.AF_con2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+}
+.AF_img2 {
+  position: relative;
+  z-index: 2;
+  top: 30%;
+  left: -19%;
+  transform: rotate(25deg);
+  width: 60%;
+  min-height: 60%;
+  border-radius: 15px;
+  border: 6px solid var(--main-color);
+  animation: pulsing_image2 3s linear infinite;
+}
+@keyframes pulsing_image2 {
+  0% {
+    transform: scale(1) rotate(25deg);
+  }
+  50% {
+    transform: scale(1.037) rotate(20deg);
+  }
+  100% {
+    transform: scale(1) rotate(25deg);
+  }
+}
+.AF_img2:hover {
+  z-index: 4;
+}
+.AF_img1 {
+  position: relative;
+  bottom: 20%;
+  left: 10%;
+  transform: rotate(-20deg);
+  z-index: 4;
+  width: 60%;
+  min-height: 60%;
+  height: auto;
+  border: 6px solid var(--main-color);
+  border-radius: 15px;
+  animation: pulsing_image1 3s linear infinite;
+}
+@keyframes pulsing_image1 {
+  0% {
+    transform: scale(1) rotate(-20deg);
+  }
+  50% {
+    transform: scale(1.037) rotate(-15deg);
+  }
+  100% {
+    transform: scale(1) rotate(-20deg);
+  }
+}
+.AF_img1:hover,
+.AF_img2:hover {
+  transform: scale(1.1) rotate(20deg);
+}
+.AF_btn_container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/*#endregion Aftercare_section*/
+
+/*#region Contact_section*/
+.Contact_section {
+  position: relative;
+  background-color: var(--main-color);
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.Contact_title,
+.List_title {
+  position: relative;
+  width: 100%;
+  color: var(--fc-dark-one);
+  text-align: center;
+  line-height: 1rem;
+  font-weight: var(--fw-large);
+  font-size: 2.5rem;
+}
+.List_title {
+  font-size: 2rem;
+}
+.List_title::before {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.Contact_title::after,
+.List_title::after {
+  margin-top: 20px;
+  width: 30%;
+}
+.List_container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: "Hospital_con Clinic_con Specialist_con";
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
+.Hospital_con,
+.Clinic_con,
+.Specialist_con {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+.Hospital_list,
+.Clinic_list,
+.Specialist_list {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  row-gap: 10px;
+  overflow-y: scroll;
+  padding: 15px;
+}
+.h_template,
+.c_template,
+.s_template {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  display: grid;
+  border-radius: 15px;
+  padding: 7px;
+}
+.s_template .tag_con{
+  display: none;
+}
+.data_details {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.data_img {
+  position: relative;
+  width: 30%;
+  height: auto;
+  border-radius: 50%;
+}
+.data_img img {
+  position: relative;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.details_con {
+  position: relative;
+  width: 70%;
+  height: auto;
+  display: grid;
+  text-align: left;
+  margin-right: 6px;
+}
+.details_con p {
+  margin-bottom: 0;
+}
+.tag_con {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.tag_img_con {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  border-radius: 50%;
+  background-color: black;
+}
+.Public {
+  background-color: white;
+}
+.Private {
+  background-color: black;
+}
+.NHIF_linda_mama {
+  background-color: lime;
+}
+.AAR {
+  background-image:linear-gradient(to right, red, white) ;
+}
+.APA {
+  background-image:linear-gradient(to right, blue, red) ;
+}
+.Britam {
+  background-image:linear-gradient(to right, white, blue) ;
+}
+.GA {
+  background-image:linear-gradient(to right, orange, grey) ;
+}
+.Jubilee {
+  background-color: red;
+}
+.Madison {
+  background-image:linear-gradient(to right, green, blue) ;
+}
+.Heritage {
+  background-color: darkblue;
+}
+.Old_Mutual {
+  background-image:linear-gradient(to right, darkgreen, green);
+}
+
+
+/*#endregion Contact_section*/
+
+/*#region Contact_Team_section*/
+.Contact_team_section {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-dark-color);
+  text-align: center;
+  padding: 25px;
+}
+.Contact_container {
+  position: relative;
+  display: flex;
+}
+.Team_info {
+  width: 30%;
+}
+.Team_details {
+  width: 70%;
+  display: flex;
+  padding: 10px;
+}
+.Team_info_title {
+  font-size: var(--fs-large);
+  font-weight: var(--fw-normal);
+}
+.Team_info_title::after {
+  margin-top: 0.5rem;
+  width: 25%;
+  color: var(--main-color);
+}
+.Team_info_paragraph {
+  font-size: var(--fs-normal);
+}
+.TD_con1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-right: 5px;
+  display: grid;
+  row-gap: 7px;
+}
+.TD_con2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-left: 5px;
+  display: grid;
+  row-gap: 7px;
+}
+.Copyright_container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: flex-end;
+}
+.Copyright_paragraph {
+  text-align: right;
+  color: var(--fc-dark-one);
+  font-weight: bold;
+}
+
+/*#endregion Contact_Team_section*/
+
+/*#endregion -------------------------------Pregnancy_Introduction_page---------------------------------*/
+
+
+
+
+
+/*#region -------------------------------Pregnancy_section_page---------------------------------*/
+
+/*#region------General_styles-------*/
+.section {
+  position: relative;
+  width: 75%;
+  height: 100vh;
+  float: left;
+  text-align: center;
+}
+.intro_section {
+  position: relative;
+  width: 75%;
+  height: 100%;
+  float: left;
+  background-image: linear-gradient(to right, rgba(184,155,131,0),rgba(184,155,131,0),rgba(184,155,131,0),rgba(213,187,149,1)), url(./assets/Sections_wallpaper.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Pregnancy_intro {
+  position: relative;
+  background-color:  #b89b83;
+  height: auto;
+}
+.FAQ_list_container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  display: grid;
+}
+.main {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.PS_img_main_container {
+  position: fixed;
+  width: 25%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-image: linear-gradient(
+      to left,
+      rgba(245, 246, 252, 0.1),
+      rgba(245, 246, 252, 0.52),
+      var(--main-color)
+    ),
+    url(./assets/tester.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*#endregion------General_styles-------*/
+
+/*#region header_container*/
+
+.P_h_c {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  background-image: linear-gradient(to right, rgba(184,155,131,1),rgba(184,155,131,1),rgba(184,155,131,1),rgba(213,187,149,1),rgba(213,187,149,1));
+}
+.Pregnancy_navbar {
+  position: relative;
+}
+
+.intro_container {
+  position: relative;
+  width: 70%;
+  height: auto;
+  bottom: -10%;
+  border-radius: 15px;
+  margin: 2rem;
+  text-align: left;
+  background-color: var(--backgorund-secondary-color);
+  box-shadow: 0 9px 19px rgb(0 0 0 / 0.4);
+}
+.intro_list {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  /* list-style-image: url(./assets/close_quotation_symbols.png); */
+}
+ul .intro_paragraph {
+  list-style: none;
+  margin: 15px;
+}
+ul .intro_paragraph::before {
+  content: "";
+  display: inline-block;
+  height: 20px;
+  width: 25px;
+  background-image: url(./assets/bullet.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*#endregion header_container*/
+
+/*#region Content_section*/
+
+.Content_section {
+  display: grid;
+  height: 100%;
+  z-index: 1;
+}
+._1st_content_container, ._2nd_content_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+._3rd_content_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  row-gap:10px
+}
+._1st_img_container, ._2nd_img_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/tester.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 1s;
+}
+.overlay_gradient:hover {
+  transform: scale(1.15);
+}
+.overlay_gradient {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/tester.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 1s;
+}
+._1st_content, ._2nd_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+._2nd_content { 
+  display: inline;
+  text-align: left;
+  padding: 20px;
+}
+._3rd_content{
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+/*#region Pregnancy_site_content_design */
+.Preg_img_main_container {
+  background-image: linear-gradient(
+      to left,
+      rgba(245, 246, 252, 0.1),
+      rgba(245, 246, 252, 0.52),
+      var(--main-color)
+    ),
+    url(./assets/Pregnancy_section_pic.jpeg);
+}
+.Preg_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Preg1.jpg);
+}
+.Preg_2nd_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Preg2.jpg);
+}
+.Preg_img_cont {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Preg3.jfif);
+}
+.Preg_overlay_gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/pregnancy_landscape_pic.jpg);
+}
+.Preg_1st_content_title::after {
+  margin-top: 10px;
+  width: 30%;
+}
+/*#endregion Pregnancy_site_content_design */
+
+/*#region Parenting_site_content_design */
+.Parenting_img_main_container {
+  background-image: linear-gradient(
+      to left,
+      rgba(245, 246, 252, 0.1),
+      rgba(245, 246, 252, 0.52),
+      var(--main-color)
+    ),
+    url(./assets/tester.jpg);
+}
+.Parenting_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Feeding1.jpg);
+}
+.Parenting_2nd_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Dressing1.jpg);
+}
+.Parenting_3rd_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Grooming1.jpg);
+}
+.Parenting_4th_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Skincare1.jpg);
+}
+.Parenting_img_cont {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Preg3.jfif);
+}
+.Parenting_overlay_gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Parenting1.jpg);
+}
+.Parenting_2nd_content h4 {
+  text-align: center;
+}
+.Parenting_2nd_content h4::after {
+  width: 20%;
+}
+.Feeding_FAQ_list_container {
+  width: 100%;
+  height: 420px;
+  overflow: auto;
+}
+.Parenting_Basics_title {
+  margin-bottom: 7px;
+  margin-top: 15px;
+  font-size: var(--fs-large);
+  text-align: center;
+}
+.Parenting_Basics_title::after {
+  margin-top: 10px;
+  width: 8%;
+}
+/*#endregion Parenting_site_content_design */
+
+/*#region Health_n_Fitness_site_content_design */
+
+.HF_img_main_container {
+  background-image: none;
+}
+.overlay_img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.HF_main1, .HF_main2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-image: linear-gradient(
+      to left,
+      rgba(245, 246, 252, 0.1),
+      rgba(245, 246, 252, 0.52),
+      var(--main-color)
+    ),
+    url(./assets/tester.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.HF_main1 {
+  background-image: linear-gradient(
+      to left,
+      rgba(245, 246, 252, 0.1),
+      rgba(245, 246, 252, 0.52),
+      var(--main-color)
+    ),
+    url(./assets/Health_side_pic.webp);
+    z-index: 3;
+    animation: Fades_change 15s linear infinite;
+}
+.HF_main2 {
+  background-image: linear-gradient(
+      to left,
+      rgba(245, 246, 252, 0.1),
+      rgba(245, 246, 252, 0.52),
+      var(--main-color)
+    ),
+    url(./assets/Fitness_side_pic1.png);
+}
+@keyframes Fades_change {
+  0% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.Trimester1_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Trimester1.jpeg);
+}
+.Trimester2_2nd_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Trimester2.jfif);
+}
+.Trimester3_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Trimester3.jpg);
+}
+.Trimester_list {
+  list-style: none;
+  text-align: left;
+}
+.Trimester_list strong {
+  color: var(--backgorund-secondary-color);
+  text-decoration: underline;
+}
+.HF_title::after {
+  width: 25%;
+}
+.H_overlay_gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Donts1.webp);
+}
+.Fitness1_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Fitness1.jpg);
+}
+.Exercising_2nd_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Exercising1.jpg);
+}
+.F_overlay_gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Donts2.webp);
+}
+
+/*#endregion Health_n_Fitness_design*/
+
+/*#region Family_Planning_site_content_design */
+.Family_Planning_img_main_container {
+  background-image: linear-gradient(
+      to left,
+      rgba(245, 246, 252, 0.1),
+      rgba(245, 246, 252, 0.52),
+      var(--main-color)
+    ),
+    url(./assets/Family_main2.jpg);
+}
+.Lifestyle_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Lifestyle1.webp);
+}
+.Barrier_2nd_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Barrier1.jpg);
+}
+.Hormonal_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Hormonal1.jpg);
+}
+.Medical_overlay_gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Medical1.jpg);
+}
+
+/*#endregion Family_Planning_design */
+
+/*#region Aftercare_site_content_design*/
+.Aftercare_img_main_container {
+background-image: linear-gradient(
+      to left,
+      rgba(245, 246, 252, 0.1),
+      rgba(245, 246, 252, 0.52),
+      var(--main-color)
+    ),
+    url(./assets/Aftercare4.jfif);
+}
+.Stitch_removal_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Stitch1.jpg);
+}
+.Non_invasive_2nd_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Non_invasive1.jpeg);
+}
+.Vaginal_Rejuvenation_1st_img_container {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Vaginal1.jpg);
+}
+.Mommy_makeover_overlay_gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0),
+    rgba(245, 246, 252, 0.52),
+    var(--main-color)
+  ),url(./assets/Makeover1.jpg);
+}
+
+/*#endregion Aftercare_site_content_design*/
+
+._3rd_img_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.enclose_img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.enclose_gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 3;
+}
+._3rd_img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+._3rd_img:hover {
+  transform: scale(1.15);
+}
+._1st_img_container:hover, ._2nd_img_container:hover {
+  transform: scale(1.3);
+}
+.Preg_1st_content {
+  display: inline;
+}
+.Preg_1st_content_title {
+  margin-bottom: 7px;
+  margin-top: 15px;
+}
+.Preg_1st_content_paragraph, .Preg_3rd_content_paragraph {
+  text-align: left;
+}
+.List_container_1 {
+  overflow-y: auto;
+}
+._content_paragraph {
+list-style: none;
+}
+._content_paragraph::before {
+content: "";
+  display: inline-block;
+  height: 20px;
+  width: 25px;
+  background-image: url(./assets/bullet2.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+._cp::before {
+  background-image: url(./assets/bullet3.png);
+}
+
+/*#endregion Content_section*/
+
+/*#region FAQ_section*/
+.FAQ_section {
+  position: relative;
+  height: auto;
+  display: grid;
+  z-index: 1;
+}
+.FAQ_title {
+  position: relative;
+  color: var(--fc-dark-one);
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-top: 1.1rem;
+  line-height: 3.3rem;
+  font-weight: var(--fw-large);
+  font-size: 3rem;
+}
+.FAQ_title::before {
+  font-size: var(--fs-large);
+}
+.FAQ_title::after {
+  line-height: 1rem;
+  margin-top: 1rem;
+  width: 19%;
+}
+.collapsible {
+  position: relative;
+  background-color: var(--main-color);
+  color: var(--fc-dark-one);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  border-radius: 19px;
+  text-align: left;
+  outline: none;
+  font-size: var(--fs-normal);
+  font-weight: var(--fw-xlarge);
+}
+.active, .collapsible:hover {
+  background-color: var(--backgorund-secondary-color);
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: var(--main-color);
+  transition: 1.5s;
+}
+.content_paragraph {
+transition: 1.5s;
+}
+.content_paragraph::before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 25px;
+  background-image: url(./assets/bullet.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.FAQ_item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-bottom: 2px solid var(--backgorund-secondary-color);
+}
+/*#endregion FAQ_section*/
+
+/*#region References_section*/
+
+.References_section {
+  display: grid;
+  height: auto;
+  grid-template: "Reference_container Contact_comment_container";
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--main-dark-color);
+  padding: 10px;
+  z-index: 1;
+}
+.Reference_container, .Get_information_container {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: auto;
+}
+.Reference_title {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: var(--fs-normal);
+  font-weight: var(--fw-large);
+}
+.Reference_paragraph {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: var(--fs-normal);
+}
+.References_bottom_con {
+  display: flex;
+  text-align: left;
+}
+.Get_info_buttons_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.Get_info_btn {
+  display: block;
+  background-color: var(--main-dark-color);
+  color: var(--main-color);
+}
+.Get_info_btn:hover {
+  color: white;
+}
+.back_top_container {
+  position: relative;
+  padding: 15px;
+}
+.back_top {
+  position: relative;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+}
+.back_top::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: var(--fc-light-one);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  border-radius: 50%;
+  opacity: 0.08;
+  animation: scale 1.2s ease-out infinite 1s;
+}
+@keyframes scale {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+._top {
+  position: relative;
+  font-size: 2.5rem;
+}
+.Contact_comment_container {
+  display: grid;
+}
+.CC_con {
+  display: grid;
+  row-gap: 10px;
+}
+.Contacts_btn {
+  text-decoration: none;
+  font-size: var(--fs-small);
+  background-color: var(--main-dark-color);
+  color: var(--main-color);
+}
+.Comment_container {
+  display: flex;
+  padding: 10px;
+}
+.Comment_container strong {
+  display: block;
+  text-align: left;
+}
+.Comment_btn_enclosement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  padding: 5px;
+}
+#Comment_area {
+  position: relative;
+  outline: 0;
+  width: 100%;
+  border-radius: 9px;
+  resize: vertical;
+  margin: 0;
+  padding: 4px;
+  background: var(--main-color);
+}
+.submit_btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  float: right;
+}
+.Disclaimer {
+  display: block;
+}
+.Disclaimer_paragraph {
+  text-transform: lowercase;
+}
+.Disclaimer_paragraph strong {
+  text-transform: none;
+}
+footer {
+  position: relative;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+/*#endregion References_section*/
+
+/*#endregion -------------------------------Pregnancy_section_page---------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
